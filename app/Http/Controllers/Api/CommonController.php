@@ -60,15 +60,6 @@ class CommonController extends Controller
      */
     public function sendCodeMobile($mobile,$code)
     {
-        $arr['return_code'] = 00000;
-        if($arr['return_code'] == 00000 ){
-            return true;
-        }else{
-            return false;
-        }
-
-        die;
-
         $host = "http://dingxin.market.alicloudapi.com";
         $path = "/dx/sendSms";
         $method = "POST";
