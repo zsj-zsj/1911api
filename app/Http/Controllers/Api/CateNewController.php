@@ -134,6 +134,10 @@ class CateNewController extends CommonController
         $res = NewTitleModel::join('new_category','new_category.cate_id','=','new_title.cate_id')
                     ->orderBy('title_id','desc')->limit(10)->get();
         $res = collect($res)->toArray();
+            foreach ($res as $k=>$v){
+                 $res[$k]['img'] = env('APP_URL').$v['img'];
+            }
+//        dd($res);
         return $this->success($res);
     }
 }
